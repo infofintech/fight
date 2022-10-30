@@ -1,0 +1,1 @@
+title|[>]|Fight|[1]|favicon|[>]|icon.chess.png|[1]|run|[>]|window.location.href='fight.htm';

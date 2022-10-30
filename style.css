@@ -1,0 +1,58 @@
+
+.controls ul{
+    padding: 0;
+    list-style-type: none;
+    color: black;
+    font-size: 14px;
+    padding: 0;
+
+}
+canvas {
+    border: solid 1px #ccc;
+    padding: 5px;
+    display:block;
+}
+
+#game_over {
+    position: absolute;
+    left: 150px;
+    top: 100px;
+}
+
+#fight {
+    position: absolute;
+    left: 150px;
+    top: 100px;
+}
+
+.play{
+    font-size:20px;
+}
+.controls {
+    float: left;
+    position: relative;
+}
+
+.wrapper {
+   display: table;
+   padding: 0;
+   width: 100%;
+   height: 100%;
+   position: absolute;
+}
+.container {
+   display: table-cell;
+   vertical-align: middle;
+}
+.canvas-container {
+   position: relative;
+   max-width: 1024px;
+   min-width: 320px;
+   margin: 0 auto;
+}
+#main {
+   width: 100%;
+   height: auto;
+   background-color: pink;
+}
+
