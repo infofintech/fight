@@ -1,4 +1,3 @@
-
 .controls ul{
     padding: 0;
     list-style-type: none;
@@ -12,19 +11,16 @@ canvas {
     padding: 5px;
     display:block;
 }
-
 #game_over {
     position: absolute;
     left: 150px;
     top: 100px;
 }
-
 #fight {
     position: absolute;
     left: 150px;
     top: 100px;
 }
-
 .play{
     font-size:20px;
 }
@@ -32,7 +28,6 @@ canvas {
     float: left;
     position: relative;
 }
-
 .wrapper {
    display: table;
    padding: 0;
@@ -55,4 +50,3 @@ canvas {
    height: auto;
    background-color: pink;
 }
-

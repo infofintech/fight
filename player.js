@@ -1,17 +1,13 @@
 function Player(x, sprite_sheet, facing_right) {
-
     this.x = x;
     this.dx = 0;
     this.y = level.getHeightAtPoint(x);
     this.dy = 0;
     this.health = 100;
     this.sprite = new AnimatingSprite(sprite_sheet);
-
     this.facing_right = facing_right;
-
     this.other_player = null;
     this.jumped = false;
-
     this.MAX_SPEED = .3;
     this.DX_ACCEL = .05;
     this.DX_DECAY = .02;
@@ -26,7 +22,6 @@ function Player(x, sprite_sheet, facing_right) {
     this.HIT_MOVE_DISTANCE = 5;
     this.THROWN_SPEED = -.5;
     this.THROWN_TIME = 600;
-
     this.moveLeft = function() {
         if (this.action != ACTION_IDLE) {
             return;
@@ -82,7 +77,6 @@ function Player(x, sprite_sheet, facing_right) {
         }
         this.sprite.setState(spriteState);
     }
-
     this.punch = function() {
         if (this.action != ACTION_IDLE) {
             return;
@@ -95,7 +89,6 @@ function Player(x, sprite_sheet, facing_right) {
             this.other_player.hit(this.PUNCH_DAMAGE);
         }
     }
-
     this.throw_em = function() { // "throw" is a reserved word
         if (this.action != ACTION_IDLE) {
             return;
@@ -108,7 +101,6 @@ function Player(x, sprite_sheet, facing_right) {
             this.other_player.thrown(this.THROW_DAMAGE);
         }
     }
-
     this.thrown = function(damage) {
         this.health -= damage;
         this.setAction(ACTION_THROWN);
@@ -119,7 +111,6 @@ function Player(x, sprite_sheet, facing_right) {
             this.dx = this.THROWN_SPEED;
         }
     }
-
     this.hit = function(damage) {
         this.dx = 0;
         if (this.isBlocking) {
@@ -137,11 +128,9 @@ function Player(x, sprite_sheet, facing_right) {
             }
         }
     }
-
     this.distanceTo = function(other) {
         return Math.abs(this.x - other.x);
     }
-
     this.update = function(dt) {
         // Compute the desired vertical position of the character by moving one
         // time step along the velocity vector in the vertical axis.
@@ -156,7 +145,6 @@ function Player(x, sprite_sheet, facing_right) {
         } else if (this.dx < 0) {
             this.dx += this.DX_DECAY;
         }
-
         // If the desired position intersects with the landscape then stop the jump.
         var newHeight = level.getHeightAtPoint(this.x);
         if (newY < newHeight) {
@@ -174,18 +162,14 @@ function Player(x, sprite_sheet, facing_right) {
                 this.setAction(ACTION_IDLE);
             }
         }
-
         this.facing_right = (this.x < this.other_player.x);
     }
-
     this.isAlive = function() {
         return this.health >= 0;
     }
-
     this.block = function(should_block) {
         this.isBlocking = should_block;
     }
-
     this.action_timer = 0;
     this.setAction(ACTION_IDLE);
 }
