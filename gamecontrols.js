@@ -50,16 +50,16 @@ function startRound() {
 }
 function handleInput() {
     if (keys.isPressed(KEY_SPACE)) {
-        player2.throw_em();
+        player1.throw_em();
     }
-    player2.block(false);
+    player1.block(false);
     if (keys.isPressed(KEY_A)) {
-        player2.moveLeft();
-        player2.block(player2.facing_right);
+        player1.moveLeft();
+        player1.block(player1.facing_right);
     }
     if (keys.isPressed(KEY_D)) {
-        player2.moveRight();
-        player2.block(!player2.facing_right);
+        player1.moveRight();
+        player1.block(!player1.facing_right);
     }
     if (keys.isPressed(KEY_ENTER)) {
         player2.throw_em();
