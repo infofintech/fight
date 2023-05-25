@@ -1,4 +1,7 @@
-.controls ul{
+html, body {
+    overflow: hidden;
+}
+.controls ul {
     padding: 0;
     list-style-type: none;
     color: black;
@@ -21,7 +24,7 @@ canvas {
     left: 150px;
     top: 100px;
 }
-.play{
+.play {
     font-size:20px;
 }
 .controls {
