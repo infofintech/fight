@@ -49,6 +49,18 @@ function startRound() {
     win.startGame();
 }
 function handleInput() {
+    if (keys.isPressed(KEY_SPACE)) {
+        player2.throw_em();
+    }
+    player2.block(false);
+    if (keys.isPressed(KEY_A)) {
+        player2.moveLeft();
+        player2.block(player2.facing_right);
+    }
+    if (keys.isPressed(KEY_D)) {
+        player2.moveRight();
+        player2.block(!player2.facing_right);
+    }
     if (keys.isPressed(KEY_ENTER)) {
         player2.throw_em();
     }
